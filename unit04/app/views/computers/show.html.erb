@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Brand:</strong>
+  <%= @computer.brand %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @computer.price %>
+</p>
+
+<p>
+  <strong>Screen size:</strong>
+  <%= @computer.screen_size %>
+</p>
+
+<%= link_to 'Edit', edit_computer_path(@computer) %> |
+<%= link_to 'Back', computers_path %>
