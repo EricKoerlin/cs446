@@ -4,6 +4,7 @@ class CreateComputers < ActiveRecord::Migration
       t.string :brand
       t.decimal :price, precision: 7, scale: 2
       t.integer :screen_size
+      t.references :store, index:true
 
       t.timestamps null: false
     end

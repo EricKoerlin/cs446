@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150211193001) do
+ActiveRecord::Schema.define(version: 20150212142337) do
 
   create_table "books", force: :cascade do |t|
     t.string   "title"
@@ -27,10 +27,13 @@ ActiveRecord::Schema.define(version: 20150211193001) do
     t.string   "brand"
     t.decimal  "price",       precision: 7, scale: 2
     t.integer  "screen_size"
+    t.integer  "store_id"
     t.datetime "created_at",                          null: false
     t.datetime "updated_at",                          null: false
     t.integer  "cpu"
   end
+
+  add_index "computers", ["store_id"], name: "index_computers_on_store_id"
 
   create_table "stores", force: :cascade do |t|
     t.string   "name"

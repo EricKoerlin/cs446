@@ -24,7 +24,9 @@ class ComputersController < ApplicationController
   # POST /computers
   # POST /computers.json
   def create
-    @computer = Computer.new(computer_params)
+    @store = Store.find(params[:store_id])
+    @computer = @store.computers.create(computer_params)
+    redirect_to computer_path(@store)
 
     respond_to do |format|
       if @computer.save
@@ -54,11 +56,10 @@ class ComputersController < ApplicationController
   # DELETE /computers/1
   # DELETE /computers/1.json
   def destroy
+    @store = Store.find(params[:store_id])
+    @computer = @store.computers.find(params[:id])
     @computer.destroy
-    respond_to do |format|
-      format.html { redirect_to computers_url, notice: 'Computer was successfully destroyed.' }
-      format.json { head :no_content }
-    end
+    redirect_to computer_path(@store)
   end
 
   private
