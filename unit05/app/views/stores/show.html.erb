@@ -1,0 +1,36 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @store.name %>
+</p>
+
+<p>
+  <strong>City:</strong>
+  <%= @store.city %>
+</p>
+
+<h2>Computers</h2>
+<% @store.computers.each do |computer| %>
+
+      <strong>Brand:</strong>
+      <%= computer.brand %>
+
+      Price:
+      <%= computer.price %>
+
+      Screen Size:
+      <%= computer.screen_size %>
+
+      CPU Cores
+      <%= computer.cpu %>
+
+    <%= link_to 'Edit', edit_computer_path(computer) %> |
+      <%= link_to 'Delete', [computer.store, computer],
+                  method: :delete,
+                  data: { confirm: 'Are you sure?' } %>
+<% end %>
+
+<br>
+<%= link_to 'Edit', edit_store_path(@store) %> |
+<%= link_to 'Back', stores_path %>
