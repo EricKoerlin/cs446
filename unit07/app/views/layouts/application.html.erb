@@ -9,13 +9,19 @@
 <body>
 
 <div class=header>
+	<div id=img>
+		<%= image_tag "128px-Dog.svg.png" %>
+		<p>Image From http://commons.wikimedia.org/wiki/File:Dog.svg</p>
+	</div>
 	<h1>Pets for Adoption</h1>
 </div>
 
+<div class=body>
 <%= yield %>
+</div>
 
 <div class=footer>
-	<p>Stuff on the footer...</p>
+	<p>Stuff on the footer... Important Copyright stuff here...</p>
 </div>
 
 </body>
