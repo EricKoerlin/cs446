@@ -16,7 +16,8 @@
     <%= f.text_field :name %>
   </div>
 	<div class="field">
-		<%= f.input :pet_type, :as=> :select, :collection => Pet.pet_type.keys.to_a		%>
+		<%= f.label :type %><br>
+		<%= f.select :pet_type, options_for_select(Pet.pet_types.map {|k,v| [k,k]})	%>
 	</div>
   <div class="field">
     <%= f.label :age %><br>
@@ -24,7 +25,7 @@
   </div>
   <div class="field">
     <%= f.label :description %><br>
-    <%= f.text_field :description %>
+    <%= f.text_field :description, :size => 40%>
   </div>
   <div class="actions">
     <%= f.submit %>
