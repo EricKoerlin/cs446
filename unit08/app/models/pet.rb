@@ -5,6 +5,14 @@ class Pet < ActiveRecord::Base
 	validates :name, presence: true
 	validates :description, length: { in: 10..40 }
 
+	def is_selected
+		self.update(Pet_Status: "Selected")
+	end
+
+	def not_selected
+		self.update(Pet_Status: "Available")
+	end
+
 	private
 
 	def ensure_not_selected
