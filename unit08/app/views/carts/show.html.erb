@@ -1,0 +1,10 @@
+<p id="notice"><%= notice %></p>
+
+<% @cart.selected_pets.each do |pet| %>
+
+    <p><%= pet.pet.name %></p>
+
+<% end %>
+
+<%= link_to 'Edit', edit_cart_path(@cart) %> |
+<%= link_to 'Back', root_url %>
