@@ -59,9 +59,11 @@ class SelectedPetsController < ApplicationController
   # DELETE /selected_pets/1
   # DELETE /selected_pets/1.json
   def destroy
+    pet = Pet.find(@selected_pet.pet_id)
+    pet.not_selected
     @selected_pet.destroy
     respond_to do |format|
-      format.html { redirect_to selected_pets_url, notice: 'Selected pet was successfully destroyed.' }
+      format.html { redirect_to :controller => 'shelter', :action => 'index'}
       format.json { head :no_content }
     end
   end

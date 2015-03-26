@@ -51,6 +51,6 @@ class SelectedPetsControllerTest < ActionController::TestCase
       delete :destroy, id: @selected_pet
     end
 
-    assert_redirected_to selected_pets_path
+    assert_redirected_to shelter_path
   end
 end

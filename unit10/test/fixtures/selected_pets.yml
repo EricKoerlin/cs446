@@ -2,7 +2,7 @@
 
 one:
   pet_id: 1
-  cart_id: 
+  cart_id: one
 
 two:
   pet_id: 1
