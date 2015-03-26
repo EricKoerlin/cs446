@@ -5,7 +5,7 @@ class ShelterController < ApplicationController
 
   def index
     @pets = Pet.all.order(pet_type: :asc)
-    @cart = CurrentCart.set_cart
+    #set_cart
     #@pets = Pet.where(Pet_Status == "Available")
   end
 
